@@ -1,15 +1,19 @@
 <h1>Here are your notes:</h1>
 <h2>Inompleted Tasks:</h2>
 <hr />
-<% @notes.each do |note| %>
+<% @notes.each do |note|  %>
     <% if note.complete == false %>
-  <h3><%= note.title %></h3>
-  <hr />
-  <p><%= note.description %></p>
-  <p><%= note.priority %></p>
-  <%= link_to 'Edit', edit_note_path(note) %>
-  <%= link_to 'Delete', note_path(note), method: :delete %>
-  <%= link_to 'Show Note', note_path(note) %>
+    
+    <ul>
+      <li>
+        <p>Priority:<%= note.priority %></p>
+        <p><%= note.title %></p>
+        <p><%= note.description %></p>
+        <%= link_to 'Edit', edit_note_path(note) %>
+        <%= link_to 'Delete', note_path(note), method: :delete %>
+        <%= link_to 'Show Note', note_path(note) %>
+      </li>
+    </ul>
   <% end %>
 <% end%>
 
