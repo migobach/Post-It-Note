@@ -4,3 +4,5 @@
 <p><%= @note.priority %></p>
 <p><%= @note.complete %></p>
 
+<%= link_to 'Edit', edit_note_path %>
+<%= link_to 'Delete', note_path, method: :delete %>

@@ -1,17 +1,16 @@
 
 <%= form_for @note do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
 
-<%= f.label :title %>
-<%= f.text_field :title %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
 
-<%= f.label :descriptiion %>
-<%= f.text_field :description %>
+  <%= f.label :priority %> 
+  <%= f.select :priority, [1,2,3,4,5] %>
 
-<%= f.label :priority %> 
-<%= f.select :priority, [1,2,3,4,5] %>
+  <%= f. label :complete %>
+  <%= f.select(:complete, options_for_select([['True', true], ['False', false]], @note.complete)) %>
 
-<%= f. label :complete %>
-<%= f.select(:complete, options_for_select([['True', true], ['False', false]], @note.complete)) %>
-
-<%= f.submit %>
+  <%= f.submit %>
 <% end %>
