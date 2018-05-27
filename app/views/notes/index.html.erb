@@ -1,0 +1,8 @@
+<h1>Here are your notes:</h1>
+<% @notes.each do |note| %>
+  <h3><%= @note.title %></h3>
+  <p><%= @note.description %></p>
+  <h4><%= @note.priority %></h4>
+  <h4><%= @note.complete %></h4>
+<% end%>
+
